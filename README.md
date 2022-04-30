@@ -5,6 +5,8 @@
 
 İnternet Programcılığı 2 dersi Vize ödev çalışması için Emlak Portalı Projesinin apileri hazırlandı
 
+### NOT
+Api kullanımları aşağıda listelenmiştir
 
 # 
 ## Ekran Görüntüleri
