@@ -17,16 +17,14 @@ Veritabanı Şeması Ekran Görüntüsü
 ## API Kullanımı
 
 #### Tüm İlanları Listele
-
 ```http
-  GET /api/ilanliste
-```
+GET /api/ilanliste
+  ```
 
 #### İlanı ID'ye göre getir
-
 ```http
-  GET /api/ilanbyid/{IlanId}
-```
+GET /api/ilanbyid/{IlanId}
+  ```
 
 | Parametre | Tip     | Açıklama                       |
 | :-------- | :------- | :-------------------------------- |
@@ -35,7 +33,7 @@ Veritabanı Şeması Ekran Görüntüsü
 #### İlanları Kategoriye göre getir
 
 ```http
-  GET /api/ilanbykategoriid/{KatId}
+GET /api/ilanbykategoriid/{KatId}
 ```
 
   | Parametre | Tip     | Açıklama                       |
@@ -44,7 +42,7 @@ Veritabanı Şeması Ekran Görüntüsü
 
 #### İlan Ekle
 ```http
-  POST /api/ilanekle
+POST /api/ilanekle
   ```
 
   *Alanlar Kategoriye göre değişecektir*
@@ -67,7 +65,7 @@ Veritabanı Şeması Ekran Görüntüsü
 
 #### İlan Düzenle
 ```http
-  PUT /api/ilanduzenle
+PUT /api/ilanduzenle
 ```
   *Alanlar Kategoriye göre değişecektir*
 
@@ -88,7 +86,7 @@ Veritabanı Şeması Ekran Görüntüsü
 
 #### İlan Sil
 ```http
-  DELETE /api/ilansil{IlanId}
+DELETE /api/ilansil{IlanId}
   ```
 *Alanlar Kategoriye göre değişecektir*
 
@@ -98,12 +96,12 @@ Veritabanı Şeması Ekran Görüntüsü
 
 #### Kategorileri Listele
 ```http
-  GET /api/kategoriliste
+GET /api/kategoriliste
 ```
 
 #### Kategoriyi ID'ye göre getir
 ```http
-  GET /api/kategoribyid/{KatId}
+GET /api/kategoribyid/{KatId}
   ```  
 | Parametre      | Tip            | Açıklama                         |
 | :--------      | :-------       | :--------------------------------|
@@ -111,7 +109,7 @@ Veritabanı Şeması Ekran Görüntüsü
 
 #### Kategori Ekle
 ```http
-  POST /api/kategoriekle
+POST /api/kategoriekle
   ```  
 | Parametre      | Tip            | Açıklama                         |
 | :--------      | :-------       | :--------------------------------|
@@ -119,7 +117,7 @@ Veritabanı Şeması Ekran Görüntüsü
 
 #### Kategori Düzenle
 ```http
-  PUT /api/kategoridüzenle
+PUT /api/kategoridüzenle
   ```  
 
 | Parametre      | Tip            | Açıklama                         |
@@ -129,7 +127,7 @@ Veritabanı Şeması Ekran Görüntüsü
 
 #### İlan Sil
 ```http
-  DELETE /api/kategorisil{KatId}
+DELETE /api/kategorisil{KatId}
   ```
 
   | Parametre      | Tip            | Açıklama                         |
@@ -138,12 +136,12 @@ Veritabanı Şeması Ekran Görüntüsü
 
 #### Üyeleri Listele
 ```http
-  GET /api/uyeliste
+GET /api/uyeliste
   ```
 #### Üyeyi ID'ye göre getir
 
 ```http
-  GET /api/uyebyid/{UyeId}
+GET /api/uyebyid/{UyeId}
   ```
 
 | Parametre | Tip     | Açıklama                       |
@@ -152,7 +150,7 @@ Veritabanı Şeması Ekran Görüntüsü
 
 #### Üye Ekle
 ```http
-  POST /api/uyekle
+POST /api/uyekle
   ```  
 
 | Parametre      | Tip            | Açıklama                         |
