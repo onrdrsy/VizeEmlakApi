@@ -43,6 +43,33 @@ namespace VizeEmlakApi.Controllers
             }).ToList();
             return liste;
         }
+        [HttpGet]
+        [Route("api/ilansoneklenenliste/{o}")]
+
+        public List<IlanModel> IlanSonEklenenListe(int o)
+        {
+            List<IlanModel> liste = db.Ilan.OrderByDescending(s => s.IlanId).Take(o).Select(x => new IlanModel()
+            {
+                IlanId = x.IlanId,
+                IlanBaslik = x.IlanBaslik,
+                IlanAdres = x.IlanAdres,
+                IlanBulKat = x.IlanBulKat,
+                IlanKatsayısı = x.IlanKatsayısı,
+                IlanDurum = x.IlanDurum,
+                IlanFiyat = x.IlanFiyat,
+                IlanKatId = x.IlanKatId, // Kategori ID
+                IlanKatAdi = x.Kategori.KatAdi, // Kategori Adı
+                IlanOda = x.IlanOda,
+                IlanM2 = x.IlanM2,
+                IlanFoto = x.IlanFoto,
+                IlanTarih = x.IlanTarih,
+                IlanUyeId = x.IlanUyeId,
+                IlanUyeAdi = x.Uyeler.UyeAd,
+                IlanUyeTelefon = x.Uyeler.UyeTelefon
+
+            }).ToList();
+            return liste;
+        }
 
         [HttpGet]
         [Route("api/ilanbyid/{IlanId}")]
@@ -189,7 +216,8 @@ namespace VizeEmlakApi.Controllers
             List<KategoriModel> liste = db.Kategori.Select(x => new KategoriModel()
             {
                KatId = x.KatId,
-               KatAdi = x.KatAdi
+               KatAdi = x.KatAdi,
+               KatIlanSayisi = x.Ilan.Count()
 
             }).ToList();
             return liste;
@@ -202,7 +230,8 @@ namespace VizeEmlakApi.Controllers
             KategoriModel kayıt = db.Kategori.Where(s => s.KatId == KatId).Select(x => new KategoriModel()
             {
                 KatId = x.KatId,
-                KatAdi = x.KatAdi
+                KatAdi = x.KatAdi,
+                KatIlanSayisi = x.Ilan.Count()
             }).SingleOrDefault();
             return kayıt;
         }
@@ -295,7 +324,7 @@ namespace VizeEmlakApi.Controllers
                 UyeMail = x.UyeMail,
                 UyeParola = x.UyeParola,
                 UyeYetki = x.UyeYetki,
-                UyeKayTar = now
+                UyeKayTar = x.UyeKayTar
             }).ToList();
             return liste;    
         }
@@ -313,7 +342,7 @@ namespace VizeEmlakApi.Controllers
                 UyeMail = x.UyeMail,
                 UyeParola = x.UyeParola,
                 UyeYetki = x.UyeYetki,
-                UyeKayTar = now
+                UyeKayTar = x.UyeKayTar
             }).SingleOrDefault();
             return kayit;
         }

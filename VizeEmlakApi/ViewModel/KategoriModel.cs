@@ -9,5 +9,6 @@ namespace VizeEmlakApi.ViewModel
     {
         public int KatId { get; set; }
         public string KatAdi { get; set; }
+        public int KatIlanSayisi { get; set; }
     }
 }
